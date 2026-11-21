@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout | FreshMart Supermarket</title>
+
+  <meta name="description" content="Review your FreshMart grocery order and provide your delivery details.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <p>Fresh choices. Better living. Everyday value.</p>
+      <p>Quality products for your everyday needs</p>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-main">
+
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🛒</span>
+
+        <span>
+          <strong>FreshMart</strong>
+          <small>FRESHNESS EVERY DAY</small>
+        </span>
+      </a>
+
+      <form class="search-form" action="products.html" data-search-form>
+
+        <span>⌕</span>
+
+        <input
+          type="search"
+          name="search"
+          placeholder="Search fruits, vegetables, groceries..."
+          aria-label="Search products"
+        >
+
+        <button type="submit">Search</button>
+
+      </form>
+
+      <div class="header-actions">
+
+        <a href="cart.html" class="cart-link">
+          <span class="cart-icon">🛍</span>
+          <span>My Cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <div class="nav-wrap" id="mainNavbar">
+
+      <nav class="container navbar">
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Checkout Hero -->
+    <section class="page-hero">
+
+      <div class="container page-hero-content">
+
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span> / </span>
+          <a href="cart.html">Shopping Cart</a>
+          <span> / </span>
+          <span>Checkout</span>
+        </div>
+
+        <span class="eyebrow" style="color: #c4df91;">
+          COMPLETE YOUR SHOPPING DETAILS
+        </span>
+
+        <h1>Checkout</h1>
+
+        <p>
+          You are almost done. Review your selected groceries,
+          provide the information needed for delivery and choose
+          your preferred payment method.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Checkout Section -->
+    <section class="section-padding" style="background: var(--cream);">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="eyebrow">FINAL SHOPPING STEP</span>
+
+            <h2>
+              Complete Your <span>Order Details.</span>
+            </h2>
+
+            <p>
+              Please provide accurate contact and delivery information
+              so that a supermarket team can understand where an order
+              should be delivered.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="checkout-layout">
+
+
+          <!-- Customer Information Form -->
+          <div class="checkout-form reveal">
+
+            <span class="eyebrow">CUSTOMER INFORMATION</span>
+
+            <h2>Delivery Details</h2>
+
+            <form id="checkoutForm">
+
+              <div class="form-grid">
+
+
+                <!-- Full Name -->
+                <div class="form-group full-width">
+
+                  <label for="fullName">
+                    Full Name *
+                  </label>
+
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    minlength="2"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="form-group">
+
+                  <label for="phone">
+                    Phone Number *
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    autocomplete="tel"
+                    pattern="[0-9+() -]{10,20}"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                  <label for="checkoutEmail">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    id="checkoutEmail"
+                    name="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                  >
+
+                </div>
+
+
+                <!-- Delivery Address -->
+                <div class="form-group full-width">
+
+                  <label for="address">
+                    Delivery Address *
+                  </label>
+
+                  <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter your complete delivery address"
+                    minlength="8"
+                    autocomplete="street-address"
+                    required
+                  ></textarea>
+
+                </div>
+
+
+                <!-- City -->
+                <div class="form-group">
+
+                  <label for="city">
+                    City or Town *
+                  </label>
+
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Enter your city"
+                    autocomplete="address-level2"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- State -->
+                <div class="form-group">
+
+                  <label for="state">
+                    State *
+                  </label>
+
+                  <select id="state" name="state" required>
+
+                    <option value="">Select your state</option>
+
+                    <option value="Abia">Abia</option>
+                    <option value="Adamawa">Adamawa</option>
+                    <option value="Akwa Ibom">Akwa Ibom</option>
+                    <option value="Anambra">Anambra</option>
+                    <option value="Bauchi">Bauchi</option>
+                    <option value="Bayelsa">Bayelsa</option>
+                    <option value="Benue">Benue</option>
+                    <option value="Borno">Borno</option>
+                    <option value="Cross River">Cross River</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Ebonyi">Ebonyi</option>
+                    <option value="Edo">Edo</option>
+                    <option value="Ekiti">Ekiti</option>
+                    <option value="Enugu">Enugu</option>
+                    <option value="Federal Capital Territory">FCT</option>
+                    <option value="Gombe">Gombe</option>
+                    <option value="Imo">Imo</option>
+                    <option value="Jigawa">Jigawa</option>
+                    <option value="Kaduna">Kaduna</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Katsina">Katsina</option>
+                    <option value="Kebbi">Kebbi</option>
+                    <option value="Kogi">Kogi</option>
+                    <option value="Kwara">Kwara</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Nasarawa">Nasarawa</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Ogun">Ogun</option>
+                    <option value="Ondo">Ondo</option>
+                    <option value="Osun">Osun</option>
+                    <option value="Oyo">Oyo</option>
+                    <option value="Plateau">Plateau</option>
+                    <option value="Rivers">Rivers</option>
+                    <option value="Sokoto">Sokoto</option>
+                    <option value="Taraba">Taraba</option>
+                    <option value="Yobe">Yobe</option>
+                    <option value="Zamfara">Zamfara</option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- Delivery Notes -->
+                <div class="form-group full-width">
+
+                  <label for="deliveryNotes">
+                    Additional Delivery Instructions
+                    <span style="color: var(--muted); font-weight: 400;">
+                      (Optional)
+                    </span>
+                  </label>
+
+                  <textarea
+                    id="deliveryNotes"
+                    name="deliveryNotes"
+                    placeholder="Add any helpful directions for finding your location..."
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <!-- Payment Method -->
+              <div style="margin-top: 28px;">
+
+                <span class="eyebrow">PAYMENT PREFERENCE</span>
+
+                <h2 style="font-size: 23px; margin-bottom: 12px;">
+                  Choose Payment Method
+                </h2>
+
+                <p style="font-size: 11px; margin-bottom: 17px;">
+                  Select your preferred payment option for this
+                  demonstration checkout.
+                </p>
+
+
+                <div class="payment-options">
+
+                  <label class="payment-option">
+
+                    <input
+                      type="radio"
+                      name="payment"
+                      value="Cash on Delivery"
+                      required
+                    >
+
+                    <span>💵</span>
+
+                    <span>
+                      <strong>Cash on Delivery</strong>
+                      <br>
+                      <small>Pay when your delivery arrives.</small>
+                    </span>
+
+                  </label>
+
+
+                  <label class="payment-option">
+
+                    <input
+                      type="radio"
+                      name="payment"
+                      value="Bank Transfer"
+                      required
+                    >
+
+                    <span>🏦</span>
+
+                    <span>
+                      <strong>Bank Transfer</strong>
+                      <br>
+                      <small>Payment instructions would be provided by the business.</small>
+                    </span>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                style="margin-top: 18px;"
+              >
+                Complete Demo Checkout →
+              </button>
+
+
+              <p
+                id="checkoutMessage"
+                class="form-message"
+                aria-live="polite"
+              >
+                This is a demonstration checkout. No real order or payment will be processed.
+              </p>
+
+            </form>
+
+          </div>
+
+
+          <!-- Order Summary -->
+          <aside class="checkout-summary reveal">
+
+            <span class="eyebrow">YOUR ORDER</span>
+
+            <h2>Order Summary</h2>
+
+
+            <!-- Products inserted by JavaScript -->
+            <div id="checkoutItems">
+
+              <p>
+                Your selected products will appear here.
+              </p>
+
+            </div>
+
+
+            <div class="summary-row" style="margin-top: 22px;">
+
+              <span>Product Subtotal</span>
+
+              <strong id="checkoutSubtotal">₦0</strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+              <span>Delivery Fee</span>
+
+              <strong id="checkoutDelivery">₦0</strong>
+
+            </div>
+
+
+            <div class="summary-row summary-total">
+
+              <span>Grand Total</span>
+
+              <strong id="checkoutTotal">₦0</strong>
+
+            </div>
+
+
+            <div class="checkout-note">
+
+              <span>🔒</span>
+
+              <p>
+                Your information is not submitted or stored by this
+                demonstration form. A secure backend is required
+                to handle real customer orders.
+              </p>
+
+            </div>
+
+
+            <a href="cart.html" class="cart-back-link">
+              ← Return to Shopping Cart
+            </a>
+
+
+            <a href="products.html" class="cart-back-link">
+              Continue Shopping
+            </a>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Closing Section -->
+    <section class="promo-section">
+
+      <div class="promo-background"></div>
+
+      <div class="container promo-content reveal">
+
+        <span class="eyebrow">
+          THANK YOU FOR SHOPPING WITH FRESHMART
+        </span>
+
+        <h2>
+          Fresh Choices.
+          <span>Everyday Convenience.</span>
+        </h2>
+
+        <p>
+          We appreciate your interest in FreshMart. Continue
+          discovering our products and enjoy exploring our
+          supermarket collection.
+        </p>
+
+        <a href="products.html" class="btn btn-light">
+          Explore More Products →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand footer-logo">
+
+          <span class="brand-icon">🛒</span>
+
+          <span>
+            <strong>FreshMart</strong>
+            <small>FRESHNESS EVERY DAY</small>
+          </span>
+
+        </a>
+
+        <p>
+          FreshMart is your everyday grocery destination, bringing
+          together fresh produce, quality groceries, refreshing
+          beverages and household essentials in one convenient
+          shopping experience.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Information</h3>
+
+        <a href="about.html">About FreshMart</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html">Shopping Cart</a>
+        <a href="checkout.html">Checkout</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Shopping With Us</h3>
+
+        <p>Discover everyday essentials.</p>
+        <p>Explore our product collections.</p>
+        <p>Enjoy a convenient shopping experience.</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>© 2026 FreshMart Supermarket. All rights reserved.</p>
+
+      <p>Freshness. Quality. Everyday Value.</p>
+
+    </div>
+
+  </footer>
+
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

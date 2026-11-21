@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Shopping Cart | FreshMart Supermarket</title>
+
+  <meta name="description" content="Review your FreshMart shopping cart, update product quantities and check your order total.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <p>Fresh choices. Better living. Everyday value.</p>
+      <p>Quality products for your everyday needs</p>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-main">
+
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🛒</span>
+
+        <span>
+          <strong>FreshMart</strong>
+          <small>FRESHNESS EVERY DAY</small>
+        </span>
+      </a>
+
+      <form class="search-form" action="products.html" data-search-form>
+
+        <span>⌕</span>
+
+        <input
+          type="search"
+          name="search"
+          placeholder="Search fruits, vegetables, groceries..."
+          aria-label="Search products"
+        >
+
+        <button type="submit">Search</button>
+
+      </form>
+
+      <div class="header-actions">
+
+        <a href="cart.html" class="cart-link">
+          <span class="cart-icon">🛍</span>
+          <span>My Cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <div class="nav-wrap" id="mainNavbar">
+
+      <nav class="container navbar">
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Cart Hero -->
+    <section class="page-hero">
+
+      <div class="container page-hero-content">
+
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span> / </span>
+          <span>Shopping Cart</span>
+        </div>
+
+        <span class="eyebrow" style="color: #c4df91;">
+          YOUR SELECTED GROCERIES
+        </span>
+
+        <h1>My Shopping Cart</h1>
+
+        <p>
+          Review your selected products, adjust quantities and
+          check your shopping total before proceeding to checkout.
+          Your selected items are saved in this browser.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Shopping Cart -->
+    <section class="section-padding" style="background: var(--cream);">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+
+            <span class="eyebrow">YOUR SHOPPING SELECTION</span>
+
+            <h2>
+              Review Your <span>Cart.</span>
+            </h2>
+
+            <p>
+              Make sure your selected products and quantities
+              are correct. You can increase, decrease or remove
+              items before continuing to checkout.
+            </p>
+
+          </div>
+
+          <a href="products.html" class="text-link">
+            ← Continue Shopping
+          </a>
+
+        </div>
+
+
+        <div class="cart-layout">
+
+          <!-- Cart Items -->
+          <div>
+
+            <div class="cart-items" id="cartItems">
+
+              <div class="empty-message">
+
+                <div style="font-size: 42px; margin-bottom: 12px;">
+                  🛒
+                </div>
+
+                <h3>Your shopping cart is empty</h3>
+
+                <p>
+                  Explore our grocery collection and add your
+                  favourite products to get started.
+                </p>
+
+                <a
+                  href="products.html"
+                  class="btn btn-primary"
+                  style="margin-top: 18px;"
+                >
+                  Start Shopping →
+                </a>
+
+              </div>
+
+            </div>
+
+
+            <!-- Continue Shopping -->
+            <div class="cart-continue reveal">
+
+              <span>🥬</span>
+
+              <div>
+                <h3>Looking for something else?</h3>
+
+                <p>
+                  Continue exploring our supermarket collection
+                  and discover more everyday grocery essentials.
+                </p>
+              </div>
+
+              <a href="products.html" class="text-link">
+                Browse Products →
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Cart Summary -->
+          <aside class="cart-summary reveal">
+
+            <span class="eyebrow">ORDER SUMMARY</span>
+
+            <h2>Your Total</h2>
+
+
+            <div class="summary-row">
+
+              <span>Product Subtotal</span>
+
+              <strong id="cartSubtotal">₦0</strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+              <span>Delivery Fee</span>
+
+              <strong id="cartDelivery">₦0</strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+              <span>Discount</span>
+
+              <strong>₦0</strong>
+
+            </div>
+
+
+            <div class="summary-row summary-total">
+
+              <span>Total Amount</span>
+
+              <strong id="cartTotal">₦0</strong>
+
+            </div>
+
+
+            <p class="cart-delivery-note">
+              Delivery charges shown here are sample demonstration
+              charges. Actual delivery fees should depend on
+              the supermarket's delivery policy and location.
+            </p>
+
+
+            <a
+              href="checkout.html"
+              class="btn btn-primary btn-block checkout-button"
+            >
+              Proceed to Checkout →
+            </a>
+
+
+            <a
+              href="products.html"
+              class="cart-back-link"
+            >
+              Continue Shopping
+            </a>
+
+
+            <div class="cart-security-note">
+
+              <span>🔒</span>
+
+              <p>
+                Review your selection before proceeding.
+                This demonstration website does not process
+                real payments.
+              </p>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Shopping Benefits -->
+    <section class="benefits-section section-padding">
+
+      <div class="container benefits-grid">
+
+        <article class="benefit-card reveal">
+
+          <span class="benefit-icon">🛒</span>
+
+          <div>
+            <h3>Easy Cart Management</h3>
+            <p>Update your selected products whenever you need.</p>
+          </div>
+
+        </article>
+
+
+        <article class="benefit-card reveal">
+
+          <span class="benefit-icon">💚</span>
+
+          <div>
+            <h3>Everyday Essentials</h3>
+            <p>Explore a variety of supermarket product categories.</p>
+          </div>
+
+        </article>
+
+
+        <article class="benefit-card reveal">
+
+          <span class="benefit-icon">📋</span>
+
+          <div>
+            <h3>Clear Order Summary</h3>
+            <p>Review your product subtotal and total amount.</p>
+          </div>
+
+        </article>
+
+
+        <article class="benefit-card reveal">
+
+          <span class="benefit-icon">✨</span>
+
+          <div>
+            <h3>Simple Shopping</h3>
+            <p>Move from product selection to checkout with ease.</p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand footer-logo">
+
+          <span class="brand-icon">🛒</span>
+
+          <span>
+            <strong>FreshMart</strong>
+            <small>FRESHNESS EVERY DAY</small>
+          </span>
+
+        </a>
+
+        <p>
+          FreshMart is your everyday grocery destination, bringing
+          together fresh produce, quality groceries, refreshing
+          beverages and household essentials in one convenient
+          shopping experience.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Information</h3>
+
+        <a href="about.html">About FreshMart</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html">Shopping Cart</a>
+        <a href="checkout.html">Checkout</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Shopping With Us</h3>
+
+        <p>Discover everyday essentials.</p>
+        <p>Explore our product collections.</p>
+        <p>Enjoy a convenient shopping experience.</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>© 2026 FreshMart Supermarket. All rights reserved.</p>
+
+      <p>Freshness. Quality. Everyday Value.</p>
+
+    </div>
+
+  </footer>
+
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

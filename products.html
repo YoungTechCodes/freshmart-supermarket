@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop Products | FreshMart Supermarket</title>
+
+  <meta name="description" content="Explore fresh fruits, vegetables, drinks, dairy, bakery products and everyday groceries at FreshMart Supermarket.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Announcement -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <p>Fresh choices. Better living. Everyday value.</p>
+      <p>Quality products for your everyday needs</p>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-main">
+
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🛒</span>
+        <span>
+          <strong>FreshMart</strong>
+          <small>FRESHNESS EVERY DAY</small>
+        </span>
+      </a>
+
+      <form class="search-form" action="products.html" data-search-form>
+        <span>⌕</span>
+
+        <input
+          type="search"
+          name="search"
+          placeholder="Search fruits, vegetables, groceries..."
+          aria-label="Search products"
+        >
+
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="header-actions">
+
+        <a href="cart.html" class="cart-link">
+          <span class="cart-icon">🛍</span>
+          <span>My Cart</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <div class="nav-wrap" id="mainNavbar">
+
+      <nav class="container navbar">
+
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+
+      <div class="container page-hero-content">
+
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span> / </span>
+          <span>Shop Products</span>
+        </div>
+
+        <span class="eyebrow" style="color: #c4df91;">
+          EXPLORE THE FRESHMART COLLECTION
+        </span>
+
+        <h1>Shop Our Products</h1>
+
+        <p>
+          Discover a carefully arranged collection of fresh produce,
+          everyday groceries, drinks, dairy products and bakery favourites.
+          Find the items you need and enjoy a simpler way to organise
+          your everyday shopping.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Product Shopping Section -->
+    <section class="products-section">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div>
+            <span class="eyebrow">OUR PRODUCT COLLECTION</span>
+
+            <h2>
+              Find Your <span>Everyday Favourites.</span>
+            </h2>
+
+            <p>
+              Browse our product selection, search for specific items,
+              choose a category or arrange the collection to find
+              exactly what you are looking for.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Search and Filters -->
+        <div class="products-toolbar">
+
+          <div>
+            <p>
+              <strong id="productCount">Our available products</strong>
+            </p>
+          </div>
+
+          <div class="filter-controls">
+
+            <input
+              type="search"
+              id="productSearch"
+              placeholder="Search products..."
+              aria-label="Search the product collection"
+            >
+
+            <select id="categoryFilter" aria-label="Filter by category">
+
+              <option value="all">All Categories</option>
+
+              <option value="fruits">Fresh Fruits</option>
+
+              <option value="vegetables">Fresh Vegetables</option>
+
+              <option value="drinks">Drinks & Beverages</option>
+
+              <option value="dairy">Dairy & Eggs</option>
+
+              <option value="bakery">Bakery</option>
+
+              <option value="groceries">Everyday Groceries</option>
+
+            </select>
+
+            <select id="sortFilter" aria-label="Sort products">
+
+              <option value="featured">Featured First</option>
+
+              <option value="price-low">Price: Low to High</option>
+
+              <option value="price-high">Price: High to Low</option>
+
+              <option value="name">Name: A to Z</option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- Products will be displayed by JavaScript -->
+        <div class="product-grid" id="allProducts">
+
+          <p class="loading-message">
+            Loading our product collection...
+          </p>
+
+        </div>
+
+
+        <!-- Shopping Information -->
+        <div class="product-page-note reveal">
+
+          <div>
+            <span class="benefit-icon">🛒</span>
+          </div>
+
+          <div>
+            <h3>Shopping Made Simple</h3>
+
+            <p>
+              Found something you like? Add it to your shopping cart.
+              You can review your selection, adjust quantities and
+              check your shopping total before proceeding to checkout.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Shopping Call to Action -->
+    <section class="promo-section">
+
+      <div class="promo-background"></div>
+
+      <div class="container promo-content reveal">
+
+        <span class="eyebrow">
+          MAKE FRESHMART PART OF YOUR ROUTINE
+        </span>
+
+        <h2>
+          Your Everyday Needs,
+          <span>In One Place.</span>
+        </h2>
+
+        <p>
+          From fresh ingredients to essential household groceries,
+          discover products that help make everyday shopping more
+          convenient and enjoyable.
+        </p>
+
+        <a href="categories.html" class="btn btn-light">
+          Explore Categories →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand footer-logo">
+
+          <span class="brand-icon">🛒</span>
+
+          <span>
+            <strong>FreshMart</strong>
+            <small>FRESHNESS EVERY DAY</small>
+          </span>
+
+        </a>
+
+        <p>
+          FreshMart is your everyday grocery destination, bringing
+          together fresh produce, quality groceries, refreshing
+          beverages and household essentials in one convenient
+          shopping experience.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Special Offers</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Information</h3>
+
+        <a href="about.html">About FreshMart</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html">Shopping Cart</a>
+        <a href="checkout.html">Checkout</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Shopping With Us</h3>
+
+        <p>Discover everyday essentials.</p>
+        <p>Explore our product collections.</p>
+        <p>Enjoy a convenient shopping experience.</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>© 2026 FreshMart Supermarket. All rights reserved.</p>
+
+      <p>Freshness. Quality. Everyday Value.</p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Notifications -->
+  <div class="toast" id="toast"></div>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
